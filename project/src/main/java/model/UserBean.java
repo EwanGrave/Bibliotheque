@@ -1,11 +1,13 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Tuple;
 
 @Entity
 public class UserBean implements Serializable {
@@ -17,7 +19,8 @@ public class UserBean implements Serializable {
 	private int id;
 	private String username;
 	private String password;
-	
+	private ArrayList< Tuple > list;
+
 	public UserBean() {
 		super();
 	}
@@ -44,5 +47,13 @@ public class UserBean implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public ArrayList< Tuple > getList() {
+		return list;
+	}
+
+	public void setList(ArrayList< Tuple > list) {
+		this.list = list;
 	}
 }

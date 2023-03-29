@@ -1,8 +1,21 @@
 package model.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LoanBean {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class LoanBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private BookBean book;
 	private UserBean user;
 	private Date date;

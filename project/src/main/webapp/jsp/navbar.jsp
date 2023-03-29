@@ -17,7 +17,7 @@
 	          <a class="nav-link" href="login">Connexion</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="#">Inscription</a>
+	          <a class="nav-link" href="signin">Inscription</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link" href="#">Déconnexion</a>

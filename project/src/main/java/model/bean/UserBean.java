@@ -7,29 +7,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="User")
 public class UserBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idUser;
 	private String username;
 	private String password;
-	private ArrayList<LoanBean> borrowedList;
 
 	public UserBean() {
 		super();
 	}
 	
 	public int getId() {
-		return id;
+		return idUser;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.idUser = id;
 	}
 
 	public String getUsername() {
@@ -47,13 +48,4 @@ public class UserBean implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public ArrayList<LoanBean> getList() {
-		return borrowedList;
-	}
-
-	public void setList(ArrayList<LoanBean> list) {
-		this.borrowedList = list;
-	}
-	
 }

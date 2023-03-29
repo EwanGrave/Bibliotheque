@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Tuple;
 
 @Entity
 public class UserBean implements Serializable {
@@ -19,7 +18,7 @@ public class UserBean implements Serializable {
 	private int id;
 	private String username;
 	private String password;
-	private ArrayList< Tuple > list;
+	private ArrayList<LoanBean> borrowedList;
 
 	public UserBean() {
 		super();
@@ -49,11 +48,12 @@ public class UserBean implements Serializable {
 		this.password = password;
 	}
 
-	public ArrayList< Tuple > getList() {
-		return list;
+	public ArrayList<LoanBean> getList() {
+		return borrowedList;
 	}
 
-	public void setList(ArrayList< Tuple > list) {
-		this.list = list;
+	public void setList(ArrayList<LoanBean> list) {
+		this.borrowedList = list;
 	}
+	
 }

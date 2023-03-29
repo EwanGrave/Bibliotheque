@@ -8,8 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import business.BookBusinessImpl;
+import business.BookBusiness;
+
 @WebServlet(name="ListBookServlet", urlPatterns= {"/"})
 public class ListBookServlet extends HttpServlet{
+	
+	private BookBusiness business;
+
+	@Override
+	public void init() throws ServletException {
+	    this.business = new BookBusinessImpl();
+	}
+
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

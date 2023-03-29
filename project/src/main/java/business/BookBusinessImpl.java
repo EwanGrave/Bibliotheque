@@ -10,11 +10,11 @@ import model.bean.AuthorBean;
 import model.bean.BookBean;
 import model.bean.GenreBean;
 
-public class BookBusineesImpl implements BookBusiness{
+public class BookBusinessImpl implements BookBusiness{
 
 	@Inject
 	private BookDAO dao;
-	public BookBusineesImpl() {
+	public BookBusinessImpl() {
 	    this.dao = new BookDAOImplJPA();
 	}
 	

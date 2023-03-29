@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#">Bibliothèque</a>
@@ -15,7 +14,7 @@
 	          <a class="nav-link" href="#">Mes emprunts</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="#">Connexion</a>
+	          <a class="nav-link" href="login">Connexion</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link" href="#">Déconnexion</a>
@@ -23,7 +22,7 @@
 	      </ul>
 	    </div>
 	    <form class="d-flex" role="search">
-	      <input class="form-control me-2" type="search" placeholder="Chercher un livre" aria-label="Search">
+	      <input class="form-control me-2" type="search" size="30" placeholder="Entrez un nom de livre" aria-label="Search">
 	      <button class="btn btn-outline-success" type="submit">Chercher</button>
 	    </form>
 	</div>

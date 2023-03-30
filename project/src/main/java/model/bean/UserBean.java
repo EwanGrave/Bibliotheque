@@ -17,7 +17,7 @@ public class UserBean implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUser;
+	private Integer idUser;
 	private String username;
 	private String password;
 
@@ -25,11 +25,11 @@ public class UserBean implements Serializable {
 		super();
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return idUser;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.idUser = id;
 	}
 

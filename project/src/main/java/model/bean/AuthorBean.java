@@ -20,7 +20,7 @@ public class AuthorBean implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idAuthor;
+	private Integer idAuthor;
 	private String firstName;
 	private String lastName;
 	
@@ -31,11 +31,11 @@ public class AuthorBean implements Serializable {
 		super();
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return idAuthor;
 	}
 	
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.idAuthor = id;
 	}
 	

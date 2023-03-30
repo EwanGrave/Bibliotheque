@@ -19,7 +19,7 @@ public class BookBean implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idBook;
+	private Integer idBook;
 
 	private String ISBN;
 	
@@ -37,11 +37,11 @@ public class BookBean implements Serializable{
 		super();
 	}
 
-	public int getIdBook() {
+	public Integer getIdBook() {
 		return idBook;
 	}
 
-	public void setIdBook(int idBook) {
+	public void setIdBook(Integer idBook) {
 		this.idBook = idBook;
 	}
 

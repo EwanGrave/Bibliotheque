@@ -20,7 +20,7 @@ public class GenreBean implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idGenre;
+	private Integer idGenre;
 	private String name;
 	
 	@OneToMany(targetEntity=BookBean.class, mappedBy="genre")
@@ -30,11 +30,11 @@ public class GenreBean implements Serializable {
 		super();
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return idGenre;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.idGenre = id;
 	}
 	

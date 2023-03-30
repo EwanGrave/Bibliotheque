@@ -13,13 +13,27 @@
 	<jsp:include page="navbar.jsp" />
 	
 	<div class="m-4">
-		<form class="d-flex w-50" role="search" method="get">
-			<input class="form-control me-2" type="search" placeholder="Entrez un nom de livre" aria-label="Search">
-		    <button class="btn btn-outline-success" type="submit">Chercher</button>
+		<form class="w-50" method="post">
+			<input class="form-control mt-2" type="text" placeholder="Entrez un nom de livre" name="bookName">
+			<input class="form-control mt-2" type="text" placeholder="Entrez un nom d'auteur" name="authorName">
+			<select class="form-select mt-2" name="genre">
+			 	<option selected>Open this select menu</option>
+			 	<option value="1">One</option>
+			 	<option value="2">Two</option>
+			 	<option value="3">Three</option>
+			</select>
+			<input class="form-check-input mt-2" type="checkbox" id="flexCheckChecked" name="dispo">
+			<label class="form-check-label" for="flexCheckChecked">
+			    Disponible
+			</label>
+		    <button class="btn btn-outline-success mt-2" type="submit">Chercher</button>
 		</form>
 		
 		<!-- liste des livres -->
 		<div class="mt-4">
+			<c:forEach >
+			
+			</c:forEach>
 			<div class="card" style="width: 18rem;">
 				<img src="..." class="card-img-top" alt="...">
 			  	<div class="card-body">

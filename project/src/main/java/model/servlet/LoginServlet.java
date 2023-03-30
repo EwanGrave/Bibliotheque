@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 		if (this.userBusiness.userExists(user))
 		{
 			HttpSession session = req.getSession();
-			session.setAttribute("user", user);
+			session.setAttribute("USER", user);
 			
 			resp.sendRedirect("books");
 		}

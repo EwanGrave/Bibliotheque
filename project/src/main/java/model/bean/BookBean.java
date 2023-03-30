@@ -20,8 +20,6 @@ public class BookBean implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idBook;
-
-	private String ISBN;
 	
 	@ManyToOne
     @JoinColumn(name = "idAuthor")
@@ -32,9 +30,18 @@ public class BookBean implements Serializable{
 	private GenreBean genre;
 	private String title;
 	private String publicationYear;
+	private String descBook;
 	
 	public BookBean() {
 		super();
+	}
+
+	public String getDescription() {
+		return descBook;
+	}
+
+	public void setDescription(String description) {
+		this.descBook = description;
 	}
 
 	public Integer getIdBook() {
@@ -75,13 +82,5 @@ public class BookBean implements Serializable{
 	
 	public void setPublicationYear(String publicationYear) {
 		this.publicationYear = publicationYear;
-	}
-	
-	public String getISBN() {
-		return ISBN;
-	}
-	
-	public void setISBN(String ISBN) {
-		this.ISBN = ISBN;
 	}
 }

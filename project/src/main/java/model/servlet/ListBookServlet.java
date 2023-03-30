@@ -10,6 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name="ListBookServlet", urlPatterns= {"/", "/books"})
 public class ListBookServlet extends HttpServlet{
+	
+	private BookBusiness business;
+
+	@Override
+	public void init() throws ServletException {
+	    this.business = new BookBusinessImpl();
+	}
+
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

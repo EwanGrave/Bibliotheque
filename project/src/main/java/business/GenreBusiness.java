@@ -2,8 +2,6 @@ package business;
 
 import java.util.List;
 
-import model.bean.AuthorBean;
-import model.bean.BookBean;
 import model.bean.GenreBean;
 
 public interface GenreBusiness {

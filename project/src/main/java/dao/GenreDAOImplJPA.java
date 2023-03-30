@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import model.bean.AuthorBean;
-import model.bean.BookBean;
 import model.bean.GenreBean;
 
 public class GenreDAOImplJPA implements GenreDAO{

@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import business.BookBusiness;
+import business.BookBusinessImpl;
 
 import business.BookBusiness;
 import business.BookBusinessImpl;
@@ -14,6 +16,10 @@ import business.BookBusinessImpl;
 @WebServlet(name="ListBookServlet", urlPatterns= {"/", "/books"})
 public class ListBookServlet extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private BookBusiness business;
 
 	@Override

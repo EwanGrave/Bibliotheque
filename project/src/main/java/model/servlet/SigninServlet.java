@@ -24,6 +24,11 @@ public class SigninServlet extends HttpServlet {
 		this.userBusiness = new UserBusiness();
 	}
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("jsp/signin.jsp").forward(req, resp);

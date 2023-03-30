@@ -30,7 +30,7 @@ public class LoanBean implements Serializable {
 	
 	@Id
 	@ManyToOne
-    @JoinColumn(name = "ISBN")
+    @JoinColumn(name = "idBook")
 	private BookBean book;
 	
 	@Id

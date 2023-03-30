@@ -17,10 +17,9 @@
 			<input class="form-control mt-2" type="text" placeholder="Entrez un nom de livre" name="bookName">
 			<input class="form-control mt-2" type="text" placeholder="Entrez un nom d'auteur" name="authorName">
 			<select class="form-select mt-2" name="genre">
-			 	<option selected>Open this select menu</option>
-			 	<option value="1">One</option>
-			 	<option value="2">Two</option>
-			 	<option value="3">Three</option>
+			 	<c:forEach items="${ GENRES }" var="value">
+			 		<option value="${ value.getId() }"><c:out value="${ value.getName() }" /></option>
+			 	</c:forEach>
 			</select>
 			<input class="form-check-input mt-2" type="checkbox" id="flexCheckChecked" name="dispo">
 			<label class="form-check-label" for="flexCheckChecked">

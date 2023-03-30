@@ -1,10 +1,13 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Query;
 import model.MD5;
+import model.bean.LoanBean;
 import model.bean.UserBean;
-
+import dao.LoanDAOImplJPA;
 public class UserDAO extends MainDAO {
 	
 	public UserBean getUser(String username)
@@ -28,5 +31,16 @@ public class UserDAO extends MainDAO {
 		this.getEntityManager().getTransaction().begin();
 		this.getEntityManager().persist(user);
 		this.getEntityManager().getTransaction().commit();
+	}
+	
+	public ArrayList<LoanBean> getUserLoansList(UserBean user){
+		LoanDAOImplJPA loanDAOImplJPA = new LoanDAOImplJPA();
+		ArrayList<LoanBean> loanList = new ArrayList<LoanBean>();
+		for(LoanBean loan : loanDAOImplJPA.getLoanList()) {
+			if (loan.getUser() != user) {
+				loanList.add(loan);
+			}
+		}
+		return loanList;
 	}
 }

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -18,6 +19,8 @@ public class BookBean implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idBook;
+
 	private String ISBN;
 	
 	@ManyToOne
@@ -32,6 +35,14 @@ public class BookBean implements Serializable{
 	
 	public BookBean() {
 		super();
+	}
+
+	public int getIdBook() {
+		return idBook;
+	}
+
+	public void setIdBook(int idBook) {
+		this.idBook = idBook;
 	}
 
 	public AuthorBean getAuthor() {
@@ -70,7 +81,7 @@ public class BookBean implements Serializable{
 		return ISBN;
 	}
 	
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setISBN(String ISBN) {
+		this.ISBN = ISBN;
 	}
 }

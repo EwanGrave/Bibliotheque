@@ -24,7 +24,7 @@ public class AuthorBean implements Serializable {
 	private String firstName;
 	private String lastName;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="author", orphanRemoval = true)
+	@OneToMany(targetEntity=BookBean.class, mappedBy="author")
 	private List<BookBean> books = new ArrayList<>();
 	
 	public AuthorBean() {

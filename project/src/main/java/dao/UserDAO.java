@@ -19,7 +19,7 @@ public class UserDAO extends MainDAO {
 	public boolean userExists(UserBean user)
 	{
 		List<UserBean> users = this.getEntityManager()
-							.createNativeQuery("select * from user where username = ? and password = ?", UserBean.class)
+							.createNativeQuery("select * from userbean where username = ? and password = ?", UserBean.class)
 							.setParameter(1, user.getUsername())
 							.setParameter(2, MD5.getMd5(user.getPassword()))
 							.getResultList();

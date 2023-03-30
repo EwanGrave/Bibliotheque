@@ -18,7 +18,7 @@
 			<input class="form-control mt-2" type="text" placeholder="Entrez un nom d'auteur" name="authorName">
 			<select class="form-select mt-2" name="genre">
 			 	<c:forEach items="${ GENRES }" var="value">
-			 		<option value="${ value.getId() }"><c:out value="${ value.getName() }" /></option>
+			 		<option value="${ value.getId() }">${ value.getName() }</option>
 			 	</c:forEach>
 			</select>
 			<input class="form-check-input mt-2" type="checkbox" id="flexCheckChecked" name="dispo">
@@ -29,17 +29,15 @@
 		</form>
 		
 		<!-- liste des livres -->
-		<div class="mt-4">
+		<div class="mt-4 d-flex flex-wrap justify-content-center">
 			<c:forEach items="${ BOOKS }" var="value">
-				<div class="card" style="width: 18rem;">
+				<div class="card m-3" style="width: 18rem;">
 				  	<div class="card-body">
-				    	<h5 class="card-title"><c:out value="${ value.getTitle() }" /></h5>
-				    	<p class="card-text"><c:out value="${ value.getDescription() }" /></p>
+				    	<h5 class="card-title">${ value.getTitle() }</h5>
+				    	<p class="card-text">${ value.getGenre().getName() } - ${ value.getPublicationYear() }</p>
+				    	<p class="card-text">Par ${ value.getAuthor().getFirstName() } ${ value.getAuthor().getLastName() }</p>
+				    	<p class="card-text">${ value.getDescription() }</p>
 				  	</div>
-				  	<div class="card-body">
-				    	<a href="#" class="card-link">Card link</a>
-				    	<a href="#" class="card-link">Another link</a>
-			 		</div>
 				</div>
 			</c:forEach>
 		</div>

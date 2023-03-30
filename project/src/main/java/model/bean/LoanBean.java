@@ -4,20 +4,40 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
-public class LoanBean implements Serializable{
-
+@IdClass(LoanBean.class)
+@Table(name="Loan")
+public class LoanBean implements Serializable {
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	@ManyToOne
+    @JoinColumn(name = "ISBN")
 	private BookBean book;
+	
+	@Id
+	@ManyToOne
+    @JoinColumn(name = "idUser")
 	private UserBean user;
+	
 	private Date date;
 	
 	public BookBean getBook() {

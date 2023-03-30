@@ -16,7 +16,7 @@
 			         	<a class="nav-link" href="#">Mes emprunts</a>
 			        </li>
 			        <li class="nav-item">
-			         	<a class="nav-link" href="#">Déconnexion</a>
+			         	<a class="nav-link" href="logout">Déconnexion</a>
 			        </li>
 	        	</c:when>
 	        	<c:otherwise>

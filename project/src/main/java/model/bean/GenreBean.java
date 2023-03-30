@@ -23,7 +23,7 @@ public class GenreBean implements Serializable {
 	private int idGenre;
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="genre", orphanRemoval = true)
+	@OneToMany(targetEntity=BookBean.class, mappedBy="genre")
 	private List<BookBean> books = new ArrayList<>();
 	
 	public GenreBean() {

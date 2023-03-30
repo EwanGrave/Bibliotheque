@@ -9,7 +9,7 @@ public abstract class MainDAO {
 	private EntityManager em;
 
     public MainDAO() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionNotes");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bibliotheque");
         this.em = emf.createEntityManager();
     }
     

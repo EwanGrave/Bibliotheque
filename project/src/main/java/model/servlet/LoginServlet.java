@@ -16,6 +16,8 @@ import model.bean.UserBean;
 @WebServlet(name="loginservlet", urlPatterns= {"/login"})
 public class LoginServlet extends HttpServlet {
 	
+	private static final long serialVersionUID = 1L;
+	
 	private UserBusiness userBusiness;
 
 	@Override

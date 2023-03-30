@@ -10,18 +10,24 @@
 	        <li class="nav-item">
 	          <a class="nav-link" href="books">Livres</a>
 	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Mes emprunts</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="login">Connexion</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="signin">Inscription</a>
-	        </li>
-	        <li class="nav-item">
-	          <a class="nav-link" href="#">Déconnexion</a>
-	        </li>
+	        <c:choose>
+	        	<c:when test="${ USER != null }">
+			        <li class="nav-item">
+			         	<a class="nav-link" href="#">Mes emprunts</a>
+			        </li>
+			        <li class="nav-item">
+			         	<a class="nav-link" href="#">Déconnexion</a>
+			        </li>
+	        	</c:when>
+	        	<c:otherwise>
+	        		<li class="nav-item">
+			         	<a class="nav-link" href="login">Connexion</a>
+			        </li>
+			        <li class="nav-item">
+			         	<a class="nav-link" href="signin">Inscription</a>
+			        </li>
+	        	</c:otherwise>
+	        </c:choose>
 	      </ul>
 	    </div>
 	</div>

@@ -18,7 +18,7 @@ import model.bean.GenreBean;
 
 @WebServlet(name="ListBookServlet", urlPatterns= {"/", "/books"})
 public class ListBookServlet extends HttpServlet{
-	
+
 	private static final long serialVersionUID = 1L;
 	
 	private BookBusiness bookBusiness;
@@ -40,5 +40,15 @@ public class ListBookServlet extends HttpServlet{
 		req.setAttribute("GENRES", genres);
 		req.getRequestDispatcher("jsp/home.jsp").forward(req, resp);
 	}
-
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<BookBean> books;
+		
+		if (!req.getParameter("bookName").equals(""))
+		{
+		}
+		
+		resp.sendRedirect("books");
+	}
 }

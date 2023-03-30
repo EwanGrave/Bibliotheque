@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserBean user = new UserBean();
 		user.setUsername(req.getParameter("username"));
-		user.setPassword(MD5.getMd5(req.getParameter("password")));
+		user.setPassword(req.getParameter("password"));
 		
 		if (this.userBusiness.userExists(user))
 		{

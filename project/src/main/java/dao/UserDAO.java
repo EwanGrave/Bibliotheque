@@ -23,6 +23,8 @@ public class UserDAO extends MainDAO {
 							.setParameter(1, user.getUsername())
 							.setParameter(2, MD5.getMd5(user.getPassword()))
 							.getResultList();
+
+		System.out.println(MD5.getMd5(user.getPassword()));
 		
 		return users.size() > 0;
 	}

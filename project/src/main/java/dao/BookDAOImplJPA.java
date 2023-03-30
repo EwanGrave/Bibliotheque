@@ -18,7 +18,7 @@ public BookDAOImplJPA() {
 
 @Override
 public List<BookBean> getBookList() {
-    Query requete = em.createQuery("select n from BookBean n");
+    Query requete = em.createQuery("select n from BookBean n order by title asc");
     return requete.getResultList();
 }
 

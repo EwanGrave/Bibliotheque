@@ -83,4 +83,9 @@ public class BookBean implements Serializable{
 	public void setPublicationYear(String publicationYear) {
 		this.publicationYear = publicationYear;
 	}
+	
+	public boolean isAvailible()
+	{
+		return true;
+	}
 }

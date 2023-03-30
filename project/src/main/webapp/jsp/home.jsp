@@ -38,6 +38,12 @@
 				    	<p class="card-text">Par ${ value.getAuthor().getFirstName() } ${ value.getAuthor().getLastName() }</p>
 				    	<p class="card-text">${ value.getDescription() }</p>
 				  	</div>
+				  	<c:if test="${ USER != null && value.isAvailible() }">
+				  		<form method="post">
+				  			<input type="hidden" name="bookId" value="${ value.getIdBook() }" />
+				  			<input class="btn btn-primary m-3" type="submit" value="Emprunter" />
+				  		</form>
+				  	</c:if>
 				</div>
 			</c:forEach>
 		</div>

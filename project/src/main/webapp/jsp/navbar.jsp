@@ -30,5 +30,8 @@
 	        </c:choose>
 	      </ul>
 	    </div>
+	    <h5 class="mt-1">
+	    	Bienvenue ${ USER.getUsername() }
+	    </h5>
 	</div>
 </nav>

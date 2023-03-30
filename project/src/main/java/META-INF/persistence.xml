@@ -7,7 +7,6 @@
 		<class>model.bean.GenreBean</class>
 		<class>model.bean.LoanBean</class>
 		<class>model.bean.UserBean</class>
-		<class>model.bean.LoanBean</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 		</properties>

@@ -1,6 +1,9 @@
 package business;
 
+import java.util.ArrayList;
+
 import dao.UserDAO;
+import model.bean.LoanBean;
 import model.bean.UserBean;
 
 public class UserBusiness {
@@ -24,5 +27,9 @@ public class UserBusiness {
 	public boolean userExists(UserBean user)
 	{
 		return dao.userExists(user);
+	}
+	
+	public ArrayList<LoanBean> getUserLoansList(UserBean user){
+		return dao.getUserLoansList(user);
 	}
 }

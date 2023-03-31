@@ -13,6 +13,7 @@ import business.BookBusiness;
 import business.BookBusinessImpl;
 import business.GenreBusiness;
 import business.GenreBusinessImpl;
+import model.bean.AuthorBean;
 import model.bean.BookBean;
 import model.bean.GenreBean;
 
@@ -43,12 +44,15 @@ public class ListBookServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<BookBean> books;
+		List<BookBean> books = this.bookBusiness.getBookListByFilter(req.getParameter("bookName"),
+																	 req.getParameter("authorName"),
+																	 req.getParameter("genre"), false);
 		
-		if (!req.getParameter("bookName").equals(""))
-		{
-		}
+		List<GenreBean> genres = this.genreBusiness.getGenreList();
 		
-		resp.sendRedirect("books");
+		req.setAttribute("BOOKS", books);
+		req.setAttribute("GENRES", genres);
+
+		req.getRequestDispatcher("jsp/home.jsp").forward(req, resp);
 	}
 }

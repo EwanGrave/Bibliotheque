@@ -12,5 +12,5 @@ public interface BookBusiness {
 	public BookBean getBook(AuthorBean author);
 	public BookBean getBook(GenreBean genre);
 	public void insertBook (BookBean book);
-
+	public List<BookBean> getBookListByFilter(String title, String author, String genre, boolean availible);
 }

@@ -43,4 +43,9 @@ public class BookBusinessImpl implements BookBusiness{
 		this.dao.insertBook(book);
 	}
 
+	@Override
+	public List<BookBean> getBookListByFilter(String title, String author, String genre, boolean availible) {
+		return dao.getBookListByFilter(title, author, genre, availible);
+	}
+
 }

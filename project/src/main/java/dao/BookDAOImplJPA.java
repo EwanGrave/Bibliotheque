@@ -18,19 +18,19 @@ public class BookDAOImplJPA extends MainDAO implements BookDAO{
 	
 	@Override
 	public BookBean getBook(String titre) {
-	    BookBean book = (BookBean) this.getEntityManager().find(BookBean.class, titre);
+	    BookBean book = this.getEntityManager().find(BookBean.class, titre);
 	    return book;
 	}
 	
 	@Override
 	public BookBean getBook(AuthorBean author) {
-		BookBean book = (BookBean) this.getEntityManager().find(BookBean.class, author);
+		BookBean book = this.getEntityManager().find(BookBean.class, author);
 		return book;
 	}
 	
 	@Override
 	public BookBean getBook(GenreBean genre) {
-		BookBean book = (BookBean) this.getEntityManager().find(BookBean.class, genre);
+		BookBean book = this.getEntityManager().find(BookBean.class, genre);
 		return book;
 	}
 	
@@ -43,17 +43,17 @@ public class BookDAOImplJPA extends MainDAO implements BookDAO{
 	
 	@Override
 	public List<BookBean> getBookListByFilter(String title, String author, String genre, boolean availible) {
-		String jointureType = "left";
-		if (availible) jointureType = "inner";
-		
 		String sql = "select * from book b inner join author a on (b.idAuthor = a.idAuthor) "
-					+ "					   "+ jointureType +" join loan l on (b.idbook = l.idbook) "
+					+ "					   left join loan l on (b.idbook = l.idbook) "
 					+ "					   inner join genre g on (b.idgenre = g.idgenre) "
 					+ "where lower(title) like lower('%"+ title +"%') "
 					+ "and lower(concat(firstname, ' ', lastname)) like lower('%"+ author +"%') ";
 		
 		if (!genre.equals(""))
-			sql += "and g.idGenre = " + genre;
+			sql += "and g.idGenre = " + genre + " ";
+		
+		if (availible)
+			sql += "and b.idBook not in (select idBook from loan)";
 		
 		Query requete = this.getEntityManager().createNativeQuery(sql, BookBean.class);
 		

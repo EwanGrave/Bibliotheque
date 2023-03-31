@@ -22,7 +22,7 @@
 			 		<option value="${ value.getId() }">${ value.getName() }</option>
 			 	</c:forEach>
 			</select>
-			<input class="form-check-input mt-2" type="checkbox" id="flexCheckChecked" name="dispo">
+			<input class="form-check-input mt-2" type="checkbox" id="flexCheckChecked" name="availible">
 			<label class="form-check-label" for="flexCheckChecked">
 			    Disponible
 			</label>

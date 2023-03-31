@@ -46,7 +46,8 @@ public class ListBookServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<BookBean> books = this.bookBusiness.getBookListByFilter(req.getParameter("bookName"),
 																	 req.getParameter("authorName"),
-																	 req.getParameter("genre"), false);
+																	 req.getParameter("genre"),
+																	 req.getParameter("availible") != null);
 		
 		List<GenreBean> genres = this.genreBusiness.getGenreList();
 		

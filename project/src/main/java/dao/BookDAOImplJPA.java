@@ -43,8 +43,11 @@ public class BookDAOImplJPA extends MainDAO implements BookDAO{
 	
 	@Override
 	public List<BookBean> getBookListByFilter(String title, String author, String genre, boolean availible) {
+		String jointureType = "left";
+		if (availible) jointureType = "inner";
+		
 		String sql = "select * from book b inner join author a on (b.idAuthor = a.idAuthor) "
-					+ "					   left join loan l on (b.idbook = l.idbook) "
+					+ "					   "+ jointureType +" join loan l on (b.idbook = l.idbook) "
 					+ "					   inner join genre g on (b.idgenre = g.idgenre) "
 					+ "where lower(title) like lower('%"+ title +"%') "
 					+ "and lower(concat(firstname, ' ', lastname)) like lower('%"+ author +"%') ";

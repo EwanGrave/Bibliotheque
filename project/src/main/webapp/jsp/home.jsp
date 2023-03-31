@@ -17,6 +17,7 @@
 			<input class="form-control mt-2" type="text" placeholder="Entrez un nom de livre" name="bookName">
 			<input class="form-control mt-2" type="text" placeholder="Entrez un nom d'auteur" name="authorName">
 			<select class="form-select mt-2" name="genre">
+				<option selected value="">Sélectionnez un genre</option>
 			 	<c:forEach items="${ GENRES }" var="value">
 			 		<option value="${ value.getId() }">${ value.getName() }</option>
 			 	</c:forEach>

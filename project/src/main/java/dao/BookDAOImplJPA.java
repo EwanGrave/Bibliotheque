@@ -49,6 +49,9 @@ public class BookDAOImplJPA extends MainDAO implements BookDAO{
 					+ "where lower(title) like lower('%"+ title +"%') "
 					+ "and lower(concat(firstname, ' ', lastname)) like lower('%"+ author +"%') ";
 		
+		if (!genre.equals(""))
+			sql += "and g.idGenre = " + genre;
+		
 		Query requete = this.getEntityManager().createNativeQuery(sql, BookBean.class);
 		
 		return requete.getResultList();
